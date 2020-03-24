@@ -1,0 +1,155 @@
+<view class="detail">
+  <!-- F1 商品展示轮播图 -->
+  <view class="carousel">
+    <swiper indicator-dots='true' autoplay='true' circular='true'>
+      <swiper-item wx:for="{{lunbo}}" wx:key="index">
+        <image src="{{item.banner}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- F2 商品的详情  -->
+  <view>
+    <view style="padding:20rpx;background:#fff">
+      <view style="margin:5rpx 0 20rpx 0;font-size:40rpx">{{good.good_name}}</view>
+      <view>
+        <text style="font-size:60rpx;color:red"><text style="font-size:40rpx">￥</text>{{good.good_price}}</text>
+        <text style="color:#999;margin-left:20rpx;font-size:35rpx;text-decoration:line-through">￥{{good.good_yuan}}</text>
+      </view>
+      <view>
+        <text style="font-size:30rpx;color:#999">已售{{good.good_sales}}份</text>
+        <view style="float:right;color:#999">
+          <text>分享</text>
+        </view>
+      </view>
+      <!-- 加入会员享特价 -->
+      <view style="margin-top:50rpx">
+        <navigator url="/pages/search/search" hover-class="navigator-hover">
+          <view style="font-size:25rpx;background:#F4E8C1;padding:20rpx 15rpx">
+            <text>加入会员，享会员价<text style="color:red">￥{{good.good_price}}</text></text>
+            <view style="float:right">
+              <text>了解更多  </text>
+              <van-icon custom-style="position:relative;top:5rpx" color="#999" name="arrow" />
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 商品规格选择 -->
+    <view style="padding:20rpx;background:#fff;margin:20rpx 0;">
+      <view>
+        <view style="font-size:25rpx;color:#999" bindtap="onClickBuy">
+          <text style="margin-right:20rpx;font-size:35rpx;color:#333">选择</text>
+          <text>规格 : </text>
+          <text>默认</text>
+          <view style="float:right">
+            <van-icon custom-style="position:relative;top:5rpx" color="#999" name="arrow" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 配送说明 -->
+    <view style="padding:20rpx;background:#fff;margin:20rpx 0">
+      <view style="font-size:30rpx;color:#333">
+        <view>
+          <text style="color:#999;margin-right:20rpx">包邮</text>
+          <text>免运费[金水区]</text>
+        </view>
+        <view style="margin-top:20rpx">
+          <text style="color:#999;margin-right:20rpx">起送</text>
+          <text>满38元起送(其他省份)</text>
+          <view style="float:right">
+            <van-icon custom-style="position:relative;top:5rpx" color="#999" name="arrow" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- F3  评价区 -->
+  <view style="padding:20rpx;background:#fff;margin:20rpx 0">
+    <!-- 如果没有评价 -->
+    <!-- <view style="border-bottom:1rpx solid #f5f5f5;padding-bottom:20rpx">
+    <view style="font-size:35rpx">
+      <text>暂无评价</text>
+      </view>
+    </view> -->
+    <!-- 有评价 -->
+    <view style="border-bottom:1rpx solid #f5f5f5;padding-bottom:20rpx">
+      <view style="font-size:30rpx">
+        <text>评价</text>
+        <view style="float:right;color:#999">
+          <navigator url="/pages/comment/comment" hover-class="navigator-hover">
+            <text>查看更多</text>
+            <van-icon custom-style="position:relative;top:5rpx" color="#999" name="arrow" />
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!-- 评论 -->
+    <view>
+      <view wx:if="{{isComment}}" class="pd-20 text-center">
+        <text>暂无评价</text>
+      </view>
+      <view wx:else>
+        <view wx:for="{{comment}}" wx:key="index" style="padding:30rpx 0">
+          <!-- 评论用户的名称和时间 -->
+          <view style="display:flex;justify-content:space-between">
+            <view style="display:flex;justify-content:flex-start">
+              <image style="width:60rpx;height:60rpx;border-radius:50%" src="https://bk.bklei.com/img/uimg2.jpg"></image>
+              <text style="margin-left:20rpx;color:#999">WenJian</text>
+            </view>
+            <view style="font-size:30rpx;color:#999">
+              {{item.shiJian}}
+            </view>
+          </view>
+          <view style="padding:30rpx 0;border-bottom:1rpx solid #f5f5f5;color:#666">
+            {{item.comment}}
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <!-- 空白 -->
+  <view style="height:150rpx">
+  </view>
+  <!-- F4 底部商品导航 -->
+  <view>
+    <van-goods-action>
+      <van-goods-action-icon icon="chat-o" text="客服" dot />
+      <van-goods-action-icon icon="cart-o" text="购物车" info="5" bind:click="onClickIcon" />
+      <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickCart" />
+      <van-goods-action-button text="立即购买" bind:click="onClickBuy" />
+    </van-goods-action>
+  </view>
+  <!-- 隐藏的 商品上拉菜单 -->
+  <view>
+    <van-action-sheet show="{{isShow}}" bind:close="onClose">
+      <view>
+        <van-panel title="金桔" desc="库存：{{good.good_kucun}}" status="状态" use-footer-slot>
+          <view style="padding:20rpx 30rpx">
+            <!-- 规格 -->
+            <view>
+              <view style="margin:20rpx 0;font-size:30rpx;color:#999">规格</view>
+              <view>
+                <view style="background:red;padding:20rpx;display:inline-block;color:#fff;font-size:30rpx;margin-right:30rpx">默认</view>
+              </view>
+            </view>
+            <van-divider />
+            <!-- 数量 -->
+            <view class="row">
+              <view style="font-size:30rpx;color:#999">数量</view>
+              <van-stepper value="{{ value }}" min="1" max="{{good.good_kucun}}"  bind:change="onChange"  />
+            </view>
+          </view>
+
+        </van-panel>
+        <view slot="footer">
+          <van-button size="small" custom-style="height:90rpx;width:50% !important;" color="linear-gradient(to right, #ffd01e, #ff8917)" bind:click="onClickCart">加入购物车</van-button>
+          <van-button size="small" custom-style="height:90rpx;width:50% !important;" color="linear-gradient(to right, #ff6034, #ee0a24)" bind:click="onClickBuy">立即购买</van-button>
+        </view>
+      </view>
+    </van-action-sheet>
+  </view>
+
+</view>

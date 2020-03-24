@@ -1,0 +1,22 @@
+<!--pages/setpay/setpay.wxml-->
+<view>
+  <view class="pd-20">
+    <view style="margin-top:20rpx">
+      <text class="colorhui pd-lr-20 border-l">我的账户</text>
+    </view>
+    <view>
+      <view class="row font-50 bg-f5" style="padding:40rpx; margin:20rpx 0; color:#666">
+        <view>余额</view>
+        <view>￥0.00</view>
+      </view>
+    </view>
+    <view style="margin-top:20rpx">
+
+      <van-cell-group>
+        <van-field value="{{ value }}" placeholder="充值金额" border="{{ false }}" bind:change="onChange" />
+      </van-cell-group>
+      <van-button round type="danger" size="large" bind:click="onClickBtn">立即充值</van-button>
+    </view>
+  </view>
+
+</view>

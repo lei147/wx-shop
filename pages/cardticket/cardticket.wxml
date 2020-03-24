@@ -1,0 +1,15 @@
+<!--pages/cardticket/cardticket.wxml-->
+<view>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="未使用">
+
+    </van-tab>
+    <van-tab title="已使用">
+
+    </van-tab>
+    <van-tab title="已过期">
+
+    </van-tab>
+  </van-tabs>
+
+</view>

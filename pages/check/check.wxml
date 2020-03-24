@@ -1,0 +1,143 @@
+<!--pages/check/check.wxml-->
+<view>
+  <!-- 收获地址 -->
+  <view class="pd-20 bg-f5 border-b">
+    <navigator url="/pages/site/site">
+      <view class="row">
+        <view wx:if="{{!sites}}">
+          <view>请添加收货地址</view>
+        </view>
+        <view wx:else>
+          <view class="row font-35">
+            <text>收货人:{{sites[0].user_name}}</text>
+            <text>{{sites[0].user_phone}}</text>
+          </view>
+          <view style="padding:20rpx 20rpx 20rpx 0">
+            收获地址:
+            <text>{{sites[0].user_site}}{{sites[0].site_detail}}</text>
+          </view>
+        </view>
+        <van-icon name="arrow" />
+      </view>
+    </navigator>
+  </view>
+  <!-- 结算详情 -->
+  <view class="pd-20 bg-f5 font-35">
+    WenJian生活购物
+  </view>
+  <view>
+    <!-- 配送方式 -->
+    <view class="pd-20 row font-35 border-b">
+      <view>配送方式</view>
+      <view>
+        <van-radio-group value="{{ radio }}" bind:change="onChange">
+          <van-radio name="1">上门自取</van-radio>
+          <view style="height:10rpx"></view>
+          <van-radio name="2">物流配送</van-radio>
+        </van-radio-group>
+      </view>
+    </view>
+    <!-- 商品遍历 -->
+    <view wx:for="{{arr}}" wx:key="index">
+      <view class="border-b">
+        <van-card tag="标签" thumb="{{ item.good_banner }}">
+          <view slot="title" style="font-size:35rpx">
+            {{item.good_name}}
+          </view>
+          <view slot="tags" style="color:#999;margin-top:60rpx">
+            <text>规格:</text>
+            <text>默认</text>
+          </view>
+          <view slot="bottom" class="row">
+            <view>
+              <view>X{{item.good_num}}</view>
+            </view>
+            <text style="font-size:35rpx;color:red">￥{{price[index]}}</text>
+          </view>
+        </van-card>
+      </view>
+    </view>
+    <view style="font-size:35rpx">
+      <!-- 优惠券 -->
+      <view>
+        <view class="row pd-20 border-b">
+          <view>优惠券</view>
+          <view class="row">
+            <text style="color:#999">选择优惠券</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </view>
+      <!-- 运费 -->
+      <view>
+        <view class="row pd-20 border-b">
+          <view>运费</view>
+          <view style="color:red">￥{{0}}元</view>
+        </view>
+      </view>
+      <!-- 买家留言 -->
+      <view>
+        <view class="pd-20 colorhui">
+          <view class="border-b" style="padding-bottom:10rpx">在这里可以给商家留言哦</view>
+        </view>
+        <van-cell-group>
+          <van-field value="{{ message }}" type="textarea" autosize border="{{ true}}" />
+        </van-cell-group>
+      </view>
+    </view>
+
+  </view>
+  <!-- 支付弹出层 -->
+  <view>
+    <van-popup show="{{ show }}" z-index="100">
+      <view style="width:600rpx">
+        <view class="pd-20 border-b" style="text-align:center;">
+          <text>支付方式</text>
+          <view style="float:right;">
+            <van-icon bind:click="myClickIcon" name="cross" />
+          </view>
+
+        </view>
+        <view style="text-align:center;margin:40rpx 0">
+          <text style="font-weight:bold">支付金额:{{total}}元</text>
+        </view>
+        <view class="row" style="padding:20rpx 40rpx">
+          <view class="row">
+            <image style="width:100rpx;height:100rpx" src="https://bk.bklei.com/img/uimg2.jpg"></image>
+            <view style="margin-left:20rpx">
+              <view>余额支付</view>
+            </view>
+          </view>
+          <van-radio-group value="{{ radio }}" bind:change="onChange">
+            <van-radio name="1"></van-radio>
+          </van-radio-group>
+        </view>
+        <view style="text-align:center;padding:30rpx 0">
+          <van-button round custom-style="width:200rpx" type="danger" bind:click="myClickPay">立即支付</van-button>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+  <!-- 支付成功失败提示框 -->
+  <van-dialog id="van-dialog" />
+  <!-- 底部 -->
+  <view style="height:100rpx"></view>
+      <view class="bg-fff" style="position:fixed;width:100%;bottom:0rpx;padding:1rpx 0;border-top:1rpx solid #ebedf0">
+        <view class="row font-25">
+          <view class="row">
+            <van-checkbox value="{{ selectAllStatus }}" data-index="quan" bind:change="onChange">
+              全选
+            </van-checkbox>
+            <view style="color:red;margin-left:20rpx">总计:
+              <text wx:if="{{total!=0}}">{{'￥'+total}}</text>
+            </view>
+          </view>
+          <view>
+
+
+            <van-button type="danger"  bind:click="onSubmit"> 结 算 </van-button>
+
+          </view>
+        </view>
+      </view>
+</view>

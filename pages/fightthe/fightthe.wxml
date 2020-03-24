@@ -1,0 +1,11 @@
+<!--pages/fightthe/fightthe.wxml-->
+<view>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部"></van-tab>
+  <van-tab title="待付款"></van-tab>
+  <van-tab title="拼团中"></van-tab>
+  <van-tab title="拼团成功"></van-tab>
+   <van-tab title="拼团失败"></van-tab>
+</van-tabs>
+</view>

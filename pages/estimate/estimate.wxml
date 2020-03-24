@@ -1,0 +1,42 @@
+<!--pages/estimate/estimate.wxml-->
+<view>
+  <view class="pd-20 font-35">
+    <text style="font-weight:bold">说说你对本次购物的体验</text>
+  </view>
+  <view class="pd-20">
+    <!-- 新品信息 -->
+    <view class="pd-20 bg-f5">
+      <view class="row">
+        <view>评价</view>
+        <view class="row">
+          <view class="row pd-lr-20" style="{{action==1?'color:red':''}}" data-index="{{1}}" bindtap="myclick">
+            <van-icon size="50rpx" name="good-job-o" />
+            <text>好评</text>
+          </view>
+          <view class="row pd-lr-20" style="{{action==2?'color:red':''}}" data-index="{{2}}" bindtap="myclick">
+            <van-icon size="50rpx" name="close" />
+            <text>中评</text>
+          </view>
+          <view class="row pd-lr-20" style="{{action==3?'color:red':''}}" bindtap="myclick" data-index="{{3}}">
+            <van-icon size="50rpx" name="close" />
+            <text>差评</text>
+          </view>
+        </view>
+      </view>
+      <!-- 评价输入框 -->
+      <view style="margin:20rpx 0">
+        <view class="bg-fff" style="border-radius:20rpx">
+          <textarea class="pd-20"></textarea>
+        </view>
+      </view>
+      <!-- 添加图片 -->
+      <view>
+        <van-uploader file-list="{{ fileList }}" max-size="100000" max-count="2" bind:after-read="afterRead" bind:oversize="chao" />
+      </view>
+    </view>
+    <view>
+      <van-button size="large" type="info" bind:click="mybtn">提交</van-button>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<view id="home">
+  <!-- f1 搜索框跳转 -->
+  <view>
+    <navigator url="/pages/search/search" hover-class="navigator-hover">
+      <van-search bindtap="mysearch" disabled value="{{ value }}" placeholder="请输入搜索关键词" />
+    </navigator>
+  </view>
+  <!-- f2 轮播 && 广播 -->
+  <view class="carousel">
+    <swiper indicator-dots='true' autoplay='true' circular='true'>
+      <swiper-item>
+        <image src='https://raw.githubusercontent.com/lei147/Test/master/shop/home/banner1.png'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='https://raw.githubusercontent.com/lei147/Test/master/shop/home/banner1.png'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='https://raw.githubusercontent.com/lei147/Test/master/shop/home/banner1.png'></image>
+      </swiper-item>
+    </swiper>
+    <!-- 广播 -->
+    <van-notice-bar left-icon="../../images/laba.png" backgroundColor="#fff" text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。" />
+  </view>
+  <!-- f3 拼团购导航 && 主广告 -->
+  <view>
+    <!-- 拼团购导航 -->
+    <view style="font-size:30rpx">
+      <van-row style="line-height:30px;color:#999">
+        <van-col span="6"> 
+          <image style="width:150rpx;height:60rpx" src="../../images/pin01.png"></image>
+        </van-col>
+        <van-col span="14">限量拼团，每日必逛</van-col>
+        <van-col span="4" bindtap="mymore">
+          <navigator url="/pages/group/group" hover-class="navigator-hover">
+            更多>
+          </navigator>
+        </van-col>
+      </van-row>
+    </view>
+    <!-- 主广告 -->
+    <view class="f3_zhu">
+      <image bindtap="myclass" src="https://bk.bklei.com/shop/tu1.jpg"></image>
+    </view>
+  </view>
+  <!-- f4 商品导航 -->
+  <view class="f4_nav bg-f5">
+    <view>
+      <van-grid column-num="5" border="{{ false }}">
+        <van-grid-item  use-slot wx:for="{{ classInfo }}" wx:key="index" data-click="{{item.nav}}" bind:click="myClickTiao">
+          <image style="width: 85%; height: 100rpx;" src="{{item.url}}" />
+          <text class="font-25">{{item.name}}</text>
+        </van-grid-item>
+      </van-grid>
+    </view>
+  </view>
+  <!-- f5 广告栏 -->
+  <view class="column">
+    <view>
+
+            <view>
+        <image src="https://bk.bklei.com/shop/home/home2.png"></image>
+      </view>
+            <view>
+        <image src="https://bk.bklei.com/shop/home/home3.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,158 @@
+<!--pages/user/user.wxml-->
+<view class="bg-f5">
+  <!-- F1 头像、名称 -->
+  <view>
+    <view style="text-align:center;background-color:red;padding:60rpx 0">
+      <view>
+        <view class="inline-block userimg bg-fff">
+          <image class="userimg" src="{{avatar}}"></image>
+        </view>
+      </view>
+      <view>
+        <text wx:if="{{islogin}}" style="color:#fff">{{name}}</text>
+        <text bindtap="myIsLogin" wx:else style="color:#fff">点击登录</text>
+      </view>
+    </view>
+  </view>
+  <!-- F1 结束 -->
+  <view class="pd-20">
+    <!-- F2 积分&&余额 -->
+    <view class="row bg-fff pd-20 text-center colorhui">
+      <view style="width:50%">
+        积分
+        <text style="color:#ff9900" wx:if="{{walletInfo!=''}}">{{walletInfo.user_jifen}}</text>
+        <text style="color:#ff9900" wx:else>--</text>
+      </view>
+      <view style="width:50%">
+        余额
+        <text style="color:#ff9900" wx:if="{{walletInfo!=''}}">{{walletInfo.user_wallet}}</text>
+        <text style="color:#ff9900" wx:else>--</text>
+      </view>
+    </view>
+    <!-- F3 我的订单 -->
+    <view style="margin:30rpx 0">
+      <!-- 我的订单查看更多 -->
+      <navigator url="/pages/roderForm/roderForm">
+        <view class="row bg-fff pd-20 font-35">
+          <view>
+            <text>我的订单</text>
+          </view>
+          <view class="row colorhui">
+            <text>查看更多</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </navigator>
+      <!-- 图标 订单信息分类-->
+      <view>
+        <view>
+          <van-grid column-num="5" border="{{ false }}">
+            <van-grid-item link-type="navigateTo" url="{{'/pages/roderForm/roderForm?index='+1}}" icon="https://bk.bklei.com/shop/icon/fu.png" dot="{{true}}" text="待付款" />
+            <van-grid-item link-type="navigateTo" url="{{'/pages/roderForm/roderForm?index='+2}}" icon="https://bk.bklei.com/shop/icon/shou.png" text="待收货" />
+            <van-grid-item link-type="navigateTo" url="{{'/pages/roderForm/roderForm?index='+3}}" icon="https://bk.bklei.com/shop/icon/ping.png" text="待评价" />
+            <van-grid-item link-type="navigateTo" url="{{'/pages/roderForm/roderForm?index='+4}}" icon="https://bk.bklei.com/shop/icon/wancheng.png" text="已完成" />
+            <van-grid-item icon="https://bk.bklei.com/shop/icon/shouhou.png" text="售后" />
+          </van-grid>
+        </view>
+      </view>
+    </view>
+    <view class="bg-fff">
+      <!-- 我的订单查看更多 -->
+      <view class="pd-20">
+        <view>
+          <text>我的服务</text>
+        </view>
+      </view>
+      <!-- 我的服务-->
+      <view>
+        <view>
+          <van-grid border="{{ false }}">
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/chong.png"
+            link-type="navigateTo"
+            url="/pages/setpay/setpay"
+            text="充值中心" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/yve.png"
+            link-type="navigateTo"
+    url="/pages/dashboard/index" 
+            dot="{{true}}" 
+            text="余额记录" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/ji.png" 
+            icon="https://bk.bklei.com/shop/icon/yve.png"
+            link-type="navigateTo"
+            url="/pages/jifenin/jifenin" 
+            text="积分明细" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/qian.png" 
+            link-type="navigateTo"
+            url="/pages/jifenin/jifenin" 
+            text="签到" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/ling.png" 
+            link-type="navigateTo"
+            url="/pages/getticket/getticket" 
+            dot="{{true}}" 
+            text="领券中心" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/quan.png" 
+            link-type="navigateTo"
+            url="/pages/ticket/ticket" 
+            text="我的优惠券" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/kaquan.png" 
+            link-type="navigateTo"
+            url="/pages/cardticket/cardticket" 
+            text="我的卡券" />
+            <van-grid-item 
+            icon="https://bk.bklei.com/shop/icon/pin.png" 
+            link-type="navigateTo"
+            url="/pages/fightthe/fightthe" 
+            text="我的拼团" />
+          </van-grid>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <van-popup show="{{ ishide }}" bind:close="onClose">
+      <view style="width:650rpx;" class="pd-20">
+        <view class="row pd-20">
+          <view class="row">
+            <image style="width:50rpx;height:50rpx;boder-radius:50%;" src="https://bk.bklei.com/img/uimg2.jpg"></image>
+            <text class="pd-lr-20">Wenjian购物商城</text>
+            <text>申请</text>
+          </view>
+
+          <view>.</view>
+        </view>
+        <view class="pd-20">
+          <text>获取你的昵称、头像、地区、性别</text>
+        </view>
+        <view class="row border-t border-b">
+          <view class="row pd-20">
+            <view class="userimg">
+              <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="pd-lr-20">
+              <view>
+                <open-data type="userNickName"></open-data>
+              </view>
+              <text class="colorhui">微信个人信息</text>
+
+            </view>
+          </view>
+          <view>
+            <van-icon color="#1AAD19" size="50rpx" name="success" />
+          </view>
+        </view>
+        <view class="row pd-20 box">
+          <button type="default" bindtap="myunhide">取消</button>
+          <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+        </view>
+      </view>
+
+    </van-popup>
+  </view>
+</view>

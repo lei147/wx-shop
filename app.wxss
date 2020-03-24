@@ -1,0 +1,105 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.font-35 {
+  font-size: 30rpx;
+}
+
+.font-25 {
+  font-size: 25rpx;
+}
+.font-50{
+  font-size:50rpx
+}
+
+.colorhui {
+  color: #999;
+  font-size: 30rpx;
+}
+
+/* 弹性布局 */
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 内边距 */
+
+.pd-20 {
+  padding: 20rpx;
+}
+
+.pd-lr-20 {
+  padding: 0 20rpx;
+}
+.pd-b-10{
+  padding-bottom:10rpx
+}
+
+/* 边框线 */
+.border-l{
+  border-left: 4rpx solid red;
+}
+
+.border-b {
+  border-bottom: 0.3rpx solid #ebedf0;
+}
+
+.border-t {
+  border-top: 0.3rpx solid #ebedf0;
+}
+
+/* 背景 */
+
+.bg-f5 {
+  background-color: #f5f5f5;
+}
+
+.bg-fff {
+  background-color: #fff;
+}
+
+/* 改变元素类型 */
+
+.inline-block {
+  display: inline-block;
+}
+
+/* 居中类 */
+
+.text-center {
+  text-align: center;
+}
+
+.clear::after {
+  content: '';
+  display: block;
+  clear: both;
+  
+}
+/* 底部固定定位 */
+.fixed-b{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+/* 宽 */
+.w-100{
+  width: 100%
+}
+
+/* 盒模型更改计算 */
+.box-s{
+  box-sizing: border-box;
+}

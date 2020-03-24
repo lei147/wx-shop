@@ -1,0 +1,96 @@
+<!--pages/search/search.wxml-->
+<view>
+  <view>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:change="oncChange" bind:search="onSearch">
+      <view slot="action" bind:tap="onClickSearch">搜索</view>
+    </van-search>
+  </view>
+  <view>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="商城">
+        <view class="pd-20">
+          <!-- 历史搜索 如果有显示 没有不显示 -->
+          <view wx:if="{{isgood==true && goodArr==''}}">
+            <view class="row">
+              <text class="colorhui">历史搜索</text>
+              <van-icon name="delete" bind:click="ondelRecord" />
+            </view>
+            <view>
+              <view wx:for="{{record}}" wx:key="i" class="inline-block pd-20">
+                <view id="{{item}}" bindtap="onrecordClick">
+                  <van-tag round size="large" >{{item}}</van-tag>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 如果没搜索到就显示 -->
+          <view hidden="{{isgood}}" class="font-35 text-center pd-20">
+            <view>抱歉，没有相关商品</view>
+            <view class="colorhui">以下是为您推荐的商品</view>
+          </view>
+          <view>
+          <view wx:for="{{goodArr}}" wx:key="index">
+           <view style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
+              <navigator url="/pages/detail/detail?id={{item.good_id}}">
+                <view>
+                  <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                </view>
+                <view class="font-35">
+                  <view style="height:100rpx">
+                    <text>{{item.good_name}}</text>
+                  </view>
+                  <view class="row">
+                    <text style="color:red">￥{{item.good_price}}</text>
+                    <text class="colorhui">已售{{item.good_sales}}</text>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </view>
+           
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="拼团购">
+        <view class="pd-20">
+          <!-- 历史搜索 如果有显示 没有不显示 -->
+          <!-- <view>
+            <view class="row">
+              <text class="colorhui">历史搜索</text>
+              <van-icon name="delete" />
+            </view>
+            <view>
+              <view class="inline-block pd-20">
+                <van-tag round size="large">标签</van-tag>
+              </view>
+            </view>
+          </view> -->
+          <!-- 如果没搜索到就显示 -->
+          <view class="font-35 text-center pd-20">
+            <view>抱歉，没有相关商品</view>
+            <view class="colorhui">以下是为您推荐的商品</view>
+          </view>
+          <!-- 商品循环 -->
+          <!-- <view>
+            <view style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
+              <navigator url="/pages/detail/detail">
+                <view>
+                  <image style="width:100%; height:315rpx" src="https://bk.bklei.com/img/uimg2.jpg"></image>
+                </view>
+                <view class="font-35">
+                  <view style="height:100rpx">
+                    <text>海贼王可以不当桃之助必须死</text>
+                  </view>
+                  <view class="row position:relative">
+                    <text style="color:red">￥19.9</text>
+                    <text class="colorhui">已售93盒</text>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </view> -->
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

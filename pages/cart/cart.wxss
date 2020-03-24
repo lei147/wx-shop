@@ -1,0 +1,4 @@
+/* pages/cart/cart.wxss */
+.van-card{
+  background-color: #fff !important;
+}

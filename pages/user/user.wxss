@@ -1,0 +1,11 @@
+/* pages/user/user.wxss */
+/*  */
+.userimg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden
+}
+.box>button{
+  width: 270rpx
+}

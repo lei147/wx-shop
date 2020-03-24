@@ -1,0 +1,8 @@
+<!--pages/getticket/getticket.wxml  领券中心-->
+<view>
+  <view class="text-center" style="padding-top:100rpx">
+    <text>
+      暂无优惠券活动
+    </text>
+  </view>
+</view>

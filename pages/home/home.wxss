@@ -1,0 +1,46 @@
+/* pages/home/home.wxss */
+
+#home {
+  background: #fff;
+}
+
+/* f2 轮播图 && 广播 */
+
+/* 图片大小 */
+.carousel>swiper{
+  height: 350rpx
+}
+.carousel image {
+  width: 100%;
+  /* height: 350rpx; */
+  height: 500rpx;
+}
+
+/* f3 拼团导航 && 主广告*/
+
+/* 主广告 图片样式*/
+
+.f3_zhu image {
+  width: 100%;
+  height: 200rpx;
+}
+
+/* f4 商城导航 */
+
+.f4_nav {
+  font-size: 35rpx;
+}
+
+/* f5 广告栏 */
+
+.column>view>view {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.column image {
+  width: 100%;
+  height: 230rpx;
+  border-radius: 20rpx;
+}

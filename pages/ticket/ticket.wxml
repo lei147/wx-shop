@@ -1,0 +1,33 @@
+<!--pages/ticket/ticket.wxml  我的优惠券-->
+<view>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="未使用">
+      <view class="pd-20">
+        <view class="text-center pd-20">
+          <text>暂无相关优惠券</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已使用">
+      <view class="pd-20">
+        <view class="text-center pd-20">
+          <text>暂无相关优惠券</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已过期">
+      <view class="pd-20">
+        <view class="text-center pd-20">
+          <text>暂无相关优惠券</text>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <view class=" fixed-b w-100 " >
+    <navigator url="/pages/getticket/getticket" >
+      <view class="text-center pd-20 box-s">
+        <text>去领券</text>
+      </view>
+    </navigator>
+  </view>
+</view>

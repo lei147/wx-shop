@@ -1,0 +1,266 @@
+<!--pages/roderForm/roderForm.wxml-->
+<view class="pd-20">
+  <van-dialog id="van-dialog" />
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="全部">
+      <view>
+        <view wx:if="{{!arrOrder}}" class="text-center" style="margin:200rpx auto">
+          <text>暂无订单</text>
+        </view>
+        <!-- 开始 -->
+        <view wx:for="{{arrOrder}}" wx:key="index">
+          <van-panel title="订单号" desc="{{item[0].from_number}}" status="{{item[0].good_state=='1' ? '待发货':item[0].good_state==null ? '待付款':item[0].good_state=='2' ? '待评价':item[0].good_state=='3' ? '已完成':'61'}}" use-footer-slot>
+            <view style="margin-top:20rpx">
+              <van-card wx:for="{{item}}" wx:for-item="items" wx:key="i" tag="标签" title="{{items.good_name}}" desc="" thumb="{{ items.good_banner }}">
+                <view slot="bottom" class="row">
+                  <view>
+                    <view slot="tags" style="color:#999;">
+                      <view>
+                        <text>规格:</text>
+                        <text>默认</text>
+                      </view>
+                    </view>
+                    <view>
+                      <text>X{{items.good_num}}</text>
+                    </view>
+                  </view>
+                  <view>
+                    <text style="font-size:35rpx;color:red;margin-left:20rpx">￥{{items.good_price}}</text>
+                  </view>
+                </view>
+                <view slot="footer" style="margin-top:20rpx">
+
+                </view>
+
+              </van-card>
+              <view style="margin-left:40rpx">
+                <text style="color:red">合计：{{item[0].total}}</text>
+              </view>
+              <view class="clear">
+                <view wx:if="{{item[0].good_state=='1'}}" style="background:#fafafa;">
+                  <view style="float:right">
+                    <van-button size="small">查看订单</van-button>
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickSign">确认收货</van-button>
+                  </view>
+                </view>
+                <view wx:elif="{{item[0].good_state==null}}">
+                  <view style="float:right">
+                    <van-button size="small">取消</van-button>
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickPay">支付</van-button>
+                  </view>
+                </view>
+                <view wx:elif="{{item[0].good_state=='2'}}">
+                  <view style="float:right">
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickComment">评价</van-button>
+                  </view>
+                </view>
+                <view wx:elif="{{item[0].good_state=='3'}}">
+                  <view style="float:right">
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickPay">再次购买</van-button>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </van-panel>
+        </view>
+        <!-- 结束 -->
+      </view>
+    </van-tab>
+    <van-tab title="待付款">
+      <view>
+        <view wx:if="{{!arrOrder}}" class="text-center" style="margin:200rpx auto">
+          <text>暂无订单</text>
+        </view>
+        <!-- 开始 -->
+        <view wx:for="{{arrOrder}}" wx:key="index" wx:if="{{item[0].good_state==null}}">
+          <van-panel title="订单号" desc="{{item[0].from_number}}" status="{{item[0].good_state=='1' ? '待发货':item[0].good_state==null ? '待付款':item[0].good_state=='2' ? '待评价':item[0].good_state=='3' ? '已完成':'61'}}" use-footer-slot>
+            <view style="margin-top:20rpx">
+              <van-card wx:for="{{item}}" wx:for-item="items" wx:key="i" tag="标签" title="{{items.good_name}}" desc="" thumb="{{ items.good_banner }}">
+                <view slot="bottom" class="row">
+                  <view>
+                    <view slot="tags" style="color:#999;">
+                      <view>
+                        <text>规格:</text>
+                        <text>默认</text>
+                      </view>
+                    </view>
+                    <view>
+                      <text>X{{items.good_num}}</text>
+                    </view>
+                  </view>
+                  <view>
+                    <text style="font-size:35rpx;color:red;margin-left:20rpx">￥{{items.good_price}}</text>
+                  </view>
+                </view>
+                <view slot="footer" style="margin-top:20rpx">
+
+                </view>
+
+              </van-card>
+              <view style="margin-left:40rpx">
+                <text style="color:red">合计：{{item[0].total}}</text>
+              </view>
+              <view class="clear">
+                <view wx:if="{{item[0].good_state=='1'}}" style="background:#fafafa;">
+                  <view style="float:right">
+                    <van-button size="small">查看订单</van-button>
+                    <van-button size="small">确认收货</van-button>
+                  </view>
+                </view>
+                <view wx:else>
+                  <view style="float:right">
+                    <van-button size="small">取消</van-button>
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickPay">支付</van-button>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </van-panel>
+        </view>
+        <!-- 结束 -->
+      </view>
+    </van-tab>
+    <van-tab title="待收货">
+      <view>
+        <view wx:if="{{!arrOrder}}" class="text-center" style="margin:200rpx auto">
+          <text>暂无订单</text>
+        </view>
+        <!-- 开始 -->
+        <view wx:for="{{arrOrder}}" wx:key="index" wx:if="{{item[0].good_state=='1'}}">
+          <van-panel title="订单号" desc="{{item[0].from_number}}" status="{{item[0].good_state=='1' ? '待发货':item[0].good_state==null ? '待付款':item[0].good_state=='2' ? '待评价':item[0].good_state=='3' ? '已完成':'61'}}" use-footer-slot>
+            <view style="margin-top:20rpx">
+              <van-card wx:for="{{item}}" wx:for-item="items" wx:key="i" tag="标签" title="{{items.good_name}}" desc="" thumb="{{ items.good_banner }}">
+                <view slot="bottom" class="row">
+                  <view>
+                    <view slot="tags" style="color:#999;">
+                      <view>
+                        <text>规格:</text>
+                        <text>默认</text>
+                      </view>
+                    </view>
+                    <view>
+                      <text>X{{items.good_num}}</text>
+                    </view>
+                  </view>
+                  <view>
+                    <text style="font-size:35rpx;color:red;margin-left:20rpx">￥{{items.good_price}}</text>
+                  </view>
+                </view>
+                <view slot="footer" style="margin-top:20rpx">
+
+                </view>
+
+              </van-card>
+              <view style="margin-left:40rpx">
+                <text style="color:red">合计：{{item[0].total}}</text>
+              </view>
+              <view class="clear">
+                <view wx:if="{{item[0].good_state=='1'}}" style="background:#fafafa;">
+                  <view style="float:right">
+                    <van-button size="small">查看订单</van-button>
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickSign">确认收货</van-button>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </van-panel>
+        </view>
+        <!-- 结束 -->
+      </view>
+    </van-tab>
+    <van-tab title="待评价">
+      <view>
+        <view wx:if="{{!arrOrder}}" class="text-center" style="margin:200rpx auto">
+          <text>暂无订单</text>
+        </view>
+        <!-- 开始 -->
+        <view wx:for="{{arrOrder}}" wx:key="index" wx:if="{{item[0].good_state=='2'}}">
+          <van-panel title="订单号" desc="{{item[0].from_number}}" status="{{item[0].good_state=='1' ? '待发货':item[0].good_state==null ? '待付款':item[0].good_state=='2' ? '待评价':item[0].good_state=='3' ? '已完成':'61'}}" use-footer-slot>
+            <view style="margin-top:20rpx">
+              <van-card wx:for="{{item}}" wx:for-item="items" wx:key="i" tag="标签" title="{{items.good_name}}" desc="" thumb="{{ items.good_banner }}">
+                <view slot="bottom" class="row">
+                  <view>
+                    <view slot="tags" style="color:#999;">
+                      <view>
+                        <text>规格:</text>
+                        <text>默认</text>
+                      </view>
+                    </view>
+                    <view>
+                      <text>X{{items.good_num}}</text>
+                    </view>
+                  </view>
+                  <view>
+                    <text style="font-size:35rpx;color:red;margin-left:20rpx">￥{{items.good_price}}</text>
+                  </view>
+                </view>
+                <view slot="footer" style="margin-top:20rpx">
+
+                </view>
+
+              </van-card>
+              <view style="margin-left:40rpx">
+                <text style="color:red">合计：{{item[0].total}}</text>
+              </view>
+              <view class="clear">
+                <view wx:if="{{item[0].good_state=='2'}}">
+                  <view style="float:right">
+                    <van-button size="small" data-order="{{item[0]}}" bind:click="onClickComment">评价</van-button>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+          </van-panel>
+        </view>
+        <!-- 结束 -->
+      </view>
+    </van-tab>
+    <van-tab title="已完成">
+      <view>
+        <view wx:if="{{!arrOrder}}" class="text-center" style="margin:200rpx auto">
+          <text>暂无订单</text>
+        </view>
+        <!-- 开始 -->
+        <view wx:for="{{arrOrder}}" wx:key="index" wx:if="{{item[0].good_state=='3'}}">
+          <van-panel title="订单号" desc="{{item[0].from_number}}" status="{{item[0].good_state=='1' ? '待发货':item[0].good_state==null ? '待付款':item[0].good_state=='2' ? '待评价':item[0].good_state=='3' ? '已完成':'61'}}" use-footer-slot>
+            <view style="margin-top:20rpx">
+              <van-card wx:for="{{item}}" wx:for-item="items" wx:key="i" tag="标签" title="{{items.good_name}}" desc="" thumb="{{ items.good_banner }}">
+                <view slot="bottom" class="row">
+                  <view>
+                    <view slot="tags" style="color:#999;">
+                      <view>
+                        <text>规格:</text>
+                        <text>默认</text>
+                      </view>
+                    </view>
+                    <view>
+                      <text>X{{items.good_num}}</text>
+                    </view>
+                  </view>
+                  <view>
+                    <text style="font-size:35rpx;color:red;margin-left:20rpx">￥{{items.good_price}}</text>
+                  </view>
+                </view>
+                <view slot="footer" style="margin-top:20rpx">
+                </view>
+              </van-card>
+              <view style="margin-left:40rpx">
+                <text style="color:red">合计：{{item[0].total}}</text>
+              </view>
+              <view class="clear">
+                <view wx:if="{{item[0].good_state=='3'}}" style="background:#fafafa;">
+                  <view style="float:right">
+                    <van-button size="small">查看订单</van-button>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </van-panel>
+        </view>
+        <!-- 结束 -->
+      </view>
+    </van-tab>
+  </van-tabs>
+
+</view>

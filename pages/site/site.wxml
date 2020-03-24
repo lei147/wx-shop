@@ -1,0 +1,42 @@
+<!--pages/site/site.wxml-->
+<view>
+  <!-- 如果没地址显示 -->
+  <view wx:if="{{!sites}}" style="text-align:center;width:100%;height400rpx;line-height:400rpx">
+    <text class="colorhui">    暂无地址</text>
+
+  </view>
+  <!-- 有地址就遍历出来 -->
+  <view wx:else >
+    <view class="pd-20" wx:for="{{sites}}" wx:key="index">
+      <view class="row colorhui bg-f5">
+        <view class="pd-20">
+          <view class="row" style="margin-bottom:10rpx">
+            <text>收货人:{{item.user_name}}</text>
+            <text>{{item.user_phone}}</text>
+          </view>
+          <view>
+            <text>收货地址:</text>
+            <text>{{item.user_site}}{{item.site_detail}}</text>
+          </view>
+        </view>
+        <view style="width:150rpx">
+          <navigator url="{{'/pages/addsite/addsite?site_id='+item.site_id}}">
+            <view style="margin:20rpx 0" >编辑</view>
+          </navigator>
+
+          <view wx:if="{{item.isDefault==1}}" style="color:red">默认</view>
+          <view wx:else style="color:#1989fa" data-id="{{item.site_id}}" data-openid="{{item.openid}}" bindtap="mybtn">设为</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 添加地址按钮 -->
+  <view>
+    <view class="pd-20">
+      <navigator url="/pages/addsite/addsite">
+        <van-button icon="plus" type="primary">手动添加</van-button>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/classify/classify.wxss */
+
+
+
+/* f2 商品样式 */
+
+.f2_shpin {
+  padding: 10rpx;
+  width: 50%;
+  box-sizing: border-box;
+  float:left;
+}
+
+.f2_shpin>navigator>view {
+
+  background: #fff;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+/* 字体 */
+.trade_name{
+  font-size:35rpx;
+  margin:10rpx 0 40rpx 10rpx;
+}
+.price{
+  margin:20rpx 15rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  color:#999
+}
+.trade_price{
+  float:left;
+  color:red;
+  font-size: 35rpx;
+}
+.trade_sold{
+  float: right
+}

@@ -1,0 +1,67 @@
+<!--pages/cart/cart.wxml-->
+<view>
+  <view class="row pd-20 font-35">
+    <text class="colorhui">商品库存有限，请尽快下单</text>
+    <text wx:if="{{isShow}}" bindtap="onToggle">编辑</text>
+    <text wx:else bindtap="onToggle">完成</text>
+  </view>
+  <!-- 当购物车没有商品显示 -->
+  <view wx:if="{{isCart}}">
+
+    当前购物车没有商品
+  </view>
+  <!-- 购物车有商品显示 -->
+  <view wx:else>
+    <view style="height:30rpx;background:#f5f5f5"></view>
+    <view>
+      <view class="pd-20 border-b">
+        <van-checkbox value="{{ selectAllStatus }}" data-index="quan" bind:change="onChange">
+          <text class="font-25">WenJian生活购物</text>
+        </van-checkbox>
+      </view>
+      <!-- 遍历购物车商品 -->
+      <view wx:for="{{cart}}" wx:key="index">
+        <view class="pd-20 border-b row">
+          <van-checkbox value="{{ item.good_select==1 ? true:false  }}" data-index="{{item.good_id}}" bind:change="onChange">
+          </van-checkbox>
+        <van-card tag="标签" price="{{item.good_price}}" thumb="{{ item.good_banner }}">
+            <view slot="title" style="font-size:30rpx;width:214rpx">
+              {{item.good_name}}
+            </view>
+            <view slot="tags" style="color:#999;margin-top:20rpx">
+              <text>规格:</text>
+              <text>默认</text>
+            </view>
+          </van-card>
+          <view>
+            <view style="position:relative;top:80rpx;width:200rpx">
+              <van-stepper value="{{ item.good_num }}" min="1" max="100" input-width="25px" button-size="25px" data-index="{{item.good_id}}" bind:change="onChangeNum"  />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="height:100rpx"></view>
+      <!-- 底部提交订单栏 -->
+      <view class="bg-fff" style="position:fixed;width:100%;bottom:0rpx;padding:1rpx 0;border-top:1rpx solid #ebedf0">
+        <view class="row font-25">
+          <view class="row">
+            <van-checkbox value="{{ selectAllStatus }}" data-index="quan" bind:change="onChange">
+              全选
+            </van-checkbox>
+            <view style="color:red;margin-left:20rpx" wx:if="{{isShow}}">总计:
+              <text wx:if="{{total!=0}}">{{'￥'+total}}</text>
+            </view>
+          </view>
+          <view>
+
+            <van-button wx:if="{{isShow}}" type="danger" bind:click="oncheck">去结算</van-button>
+            <van-button wx:else round type="info" bind:click="delCart">删除</van-button>
+
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

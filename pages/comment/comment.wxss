@@ -1,0 +1,16 @@
+/* pages/comment/comment.wxss */
+.van-tab{
+  border-radius: 20%;
+  background:#fbe0dc;
+  box-sizing: border-box;
+}
+.van-tab+.van-tab{
+
+  margin:0 20rpx;
+}
+.van-tabs__nav{
+  border:0 !important;
+}
+.van-tabs__scroll{
+  margin:0 !important;
+}

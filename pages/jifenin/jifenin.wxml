@@ -1,0 +1,19 @@
+<!--pages/jifenin/jifenin.wxml-->
+<view>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="收入">
+      <view class="pd-20 border-b font-35">
+        <view class="pd-b-10">签到赠送积分10.00</view>
+        <view class="row">
+          <text style="color:#ff9900">10积分</text>
+          <text class="colorhui">2020年3月24日15:48:34</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="支出">
+
+    </van-tab>
+
+  </van-tabs>
+
+</view>
