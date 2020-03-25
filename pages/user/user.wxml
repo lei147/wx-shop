@@ -87,7 +87,7 @@
             <van-grid-item 
             icon="https://bk.bklei.com/shop/icon/qian.png" 
             link-type="navigateTo"
-            url="/pages/jifenin/jifenin" 
+            url="/pages/signin/signin" 
             text="签到" />
             <van-grid-item 
             icon="https://bk.bklei.com/shop/icon/ling.png" 

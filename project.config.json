@@ -164,6 +164,13 @@
 					"id": -1,
 					"name": "我的拼团",
 					"pathName": "pages/fightthe/fightthe",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "签到",
+					"pathName": "pages/signin/signin",
 					"scene": null
 				}
 			]

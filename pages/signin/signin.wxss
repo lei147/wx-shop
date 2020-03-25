@@ -1,1 +1,43 @@
 /* pages/signin/signin.wxss */
+.top{
+  
+}
+.top>.row{
+  width: 300rpx;
+  margin:0 auto;
+}
+.main>.row {
+  background-color: #8ee3c8;
+  border-radius: 10rpx;
+}
+
+.main>.row>view {
+  padding: 20rpx 30rpx;
+}
+
+.main>.month {
+  margin-top: 10rpx;
+  background-color: #8ee3c8;
+  border-radius: 10rpx;
+  padding: 10rpx 0;
+}
+.main>.month view{
+  display: inline-block;
+}
+.main>.month>.empty>view{
+  background-color: #8ee3c8 !important;
+}
+.main>.month>.empty>view,.main>.month>.rifor>view{
+  width: 93rpx;
+  height: 85rpx;
+  float: left;
+  margin: 4rpx 5rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 78rpx;
+
+}
+.action{
+background:#6DCAE2;
+}
+

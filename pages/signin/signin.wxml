@@ -1,4 +1,51 @@
 <!--pages/signin/signin.wxml 签到-->
+
 <view>
-    
+  <van-toast id="van-toast" />
+  <view class="top">
+    <view class="pd-20 colorhui">
+      <view>连续签到 : {{sign.signcount?sign.signcount:'0'}}天</view>
+      <view>累计签到 : {{sign.count?sign.count:'0'}}天</view>
+    </view>
+    <view class="row">
+      <van-icon size="40rpx" name="arrow-left" data-handle="prev" bindtap="handleCalendar" />
+      <view>{{cur_year}}年{{cur_month}}月</view>
+      <van-icon size="40rpx" name="arrow" data-handle="next" bindtap="handleCalendar" />
+    </view>
+  </view>
+  <view class="main pd-20">
+    <view class="row">
+      <view>日</view>
+      <view>一</view>
+      <view>二</view>
+      <view>三</view>
+      <view>四</view>
+      <view>五</view>
+      <view>六</view>
+    </view>
+    <view class="month">
+      <!-- <view class="empty ">
+        <view></view>
+        <view></view>
+      </view> -->
+      <view wx:for="{{days}}" wx:key="index" class="rifor">
+        <view class="{{item.isSign ? 'action':''}}">
+          <text>{{item.date===null?'':item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pd-20">
+
+    <view class="row font-25">
+      <view class="row">
+        <text>签到提醒： </text>
+        <van-switch size="30rpx" checked="{{ checked }}" bind:change="onChange" />
+      </view>
+      <van-button plain round type="info" size="small">回到首页</van-button>
+    </view>
+    <view style="margin-top:10rpx">
+      <van-button disabled="{{isbtn}}" round type="primary" size="large" bind:click="onClickSign">{{isbtn?'已签到':'签到'}}</van-button>
+    </view>
+  </view>
 </view>
