@@ -19,17 +19,17 @@ Page({
     isbtn:false
   },
   onClickSign(){
+    let that=this
     console.log('测试')
     if(app.globalData.isLogin){
-
-      let openid=this.data.openid
+      let openid = wx.getStorageSync('Token')
       let date = util.formatTime(new Date())
       let url = app.globalData.URL +'/product/api/addSginIn'
       wx.request({
         url: url,
         method:'post',
         data:{
-          openid:openid,
+          openid:openid.openid,
           date:date
         },
         success:res=>{
@@ -44,6 +44,7 @@ Page({
               icon:'succeed',
 
             })
+            that.onGetSignInTime() 
           }else{
             wx.showToast({
               title: '好像出了差错 -----',
