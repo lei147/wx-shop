@@ -40,11 +40,31 @@ Page({
             })
           }else if(res.data.code==200){
             wx.showToast({
-              title: '签到成功',
+              title: '签到成功 +10积分',
               icon:'succeed',
-
             })
-            that.onGetSignInTime() 
+            that.onGetSignInTime()
+            let api=app.globalData.URL+'/product/api/addJifen'
+            wx.request({
+              url: api,
+              method:'post',
+              data:{
+                openid:openid.openid
+              },
+              success:res=>{
+                if(res.data.code==200){
+                  wx.showToast({
+                    title: '签到成功 已到账 +10积分',
+                    icon:'succeed'
+                  })
+                }else{
+                  wx.showToast({
+                    title: '签到成功--积分获取失败--请联系客服反馈',
+                    icon:'none'
+                  })
+                }
+              }
+            })
           }else{
             wx.showToast({
               title: '好像出了差错 -----',
