@@ -20,7 +20,6 @@ Page({
   },
   onClickSign(){
     let that=this
-    console.log('测试')
     if(app.globalData.isLogin){
       let openid = wx.getStorageSync('Token')
       let date = util.formatTime(new Date())
@@ -118,7 +117,6 @@ Page({
         cur_month: newMonth
       })
     }
-    console.log(this.data.days)
   },
   // 获取当月共多少天
   getThisMonthDays: function(year, month) {

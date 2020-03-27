@@ -38,7 +38,6 @@ Page({
       }
     })
     //设置指定地址为默认
-    console.log(e)
   },
   querySites(){
     let that = this

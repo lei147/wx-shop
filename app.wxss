@@ -1,5 +1,4 @@
 /**app.wxss**/
-
 .container {
   height: 100%;
   display: flex;
@@ -102,4 +101,8 @@
 /* 盒模型更改计算 */
 .box-s{
   box-sizing: border-box;
+}
+/* 隐藏 */
+.dnone{
+  display: none;
 }

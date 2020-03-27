@@ -9,52 +9,52 @@ Page({
     jkUrl: ' https://blog.cross.echosite.cn',
     classInfo: [{
         nav: '1',
-        url: 'https://bk.bklei.com/shop/2.png',
+      icon: 'shuiguo',
         name: '产地水果'
       },
       {
         nav: '2',
-        url: 'https://bk.bklei.com/shop/4.png',
+        icon: 'shucai',
         name: '新鲜蔬菜'
       },
       {
         nav: '3',
-        url: 'https://bk.bklei.com/shop/6.png',
+        icon: 'haixian1',
         name: '海鲜水产'
       },
       {
         nav: '4',
-        url: 'https://bk.bklei.com/shop/10.png',
+        icon: 'yinliao1',
         name: '酒水饮料'
       },
       {
         nav: '5',
-        url: 'https://bk.bklei.com/shop/7.png',
+        icon: 'ICON_gaodian-',
         name: '熟食糕点'
       },
       {
         nav: '6',
-        url: 'https://bk.bklei.com/shop/9.png',
+        icon: 'roulei',
         name: '肉禽蛋品'
       },
       {
         nav: '7',
-        url: 'https://bk.bklei.com/shop/8.png',
+        icon: 'niunai',
         name: '乳品素食'
       },
       {
         nav: '8',
-        url: 'https://bk.bklei.com/shop/1.png',
+        icon: 'liangyoutiaowei',
         name: '粮油调味'
       },
       {
         nav: '9',
-        url: 'https://bk.bklei.com/shop/3.png',
+        icon: 'weibiaoti-',
         name: '休闲食品'
       },
       {
         nav: '10',
-        url: 'https://bk.bklei.com/shop/5.png',
+        icon: 'meizhuang1',
         name: '美妆百货'
       }
     ]
@@ -74,24 +74,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    
     let that = this;
     let url = app.globalData.URL + "/shopuser/check/login"
-    console.log(url)
     // 判断一下是否授权了
     wx.getSetting({
       success: function(res) {
-        if (res.authSetting['scope.userInfo']) {
+        if (res.authSetting['scope.userInfo']){
           wx.getStorage({
             key: 'Token',
             success: function(res) {
-              console.log(res)
               app.globalData.isLogin = true
             },
             fail: function() {
               app.globalData.isLogin = false
             }
           })
-
         }
       }
     });
@@ -108,7 +106,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    
   },
 
   /**

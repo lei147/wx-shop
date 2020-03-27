@@ -17,7 +17,6 @@ Page({
     let img=event.detail.file.path
     let obj=[{url:img}];
     let arr={url:img}
-    console.log(obj)
     if(length==0){
       this.setData({
         fileList: obj

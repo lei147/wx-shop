@@ -62,7 +62,6 @@ Page({
               that.setData({
                 islogin: true
               })
-              console.log(res.data.data)
               wx.setStorage({
                 key: 'Token',
                 data: res.data.data
@@ -90,7 +89,6 @@ Page({
             //不存在就登录
             that.logn()
           }
-          console.log(navfalged)
         } else {
           //用户没有授权
           that.setData({
@@ -132,7 +130,6 @@ Page({
       wx.getStorage({
         key: 'Token',
         success: function(res) {
-          console.log(res.data.openid)
           wx.request({
             url: url,
             method:'post',

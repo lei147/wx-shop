@@ -20,7 +20,8 @@
     "pages/cardticket/cardticket",
     "pages/jifenin/jifenin",
     "pages/setpay/setpay",
-    "pages/fightthe/fightthe"
+    "pages/fightthe/fightthe",
+    "pages/walletin/walletin"
     
   ],
   "window": {
@@ -61,5 +62,9 @@
         "selectedIconPath": "images/people_active.png"
       }
     ]
+  },
+  "usingComponents": {
+    "iconfont": "/iconfont/iconfont"
   }
+
 }

@@ -45,7 +45,12 @@ Page({
               that.queryCart(this.data.openid)
               that.checkxuan()
             }else{
-              console.log('删除失败')
+
+              wx.showToast({
+                title: '删除失败',
+                icon: 'none',
+                duration: 2000
+              })
             }
           }
 
@@ -110,7 +115,6 @@ Page({
   clickQuan() { //点击全选将所有的购物车商品选中
     let arr = this.data.cart
     for (let i = 0; i < arr.length; i++) {
-
       let cart = "cart[" + i + "].good_select"
       this.setData({
         [cart]: 1
@@ -119,7 +123,6 @@ Page({
     }
   },
   checkxuan() {
-    
     //检查商品是否都在选中状态 如果是勾上全选
     let arr = this.data.cart
     if (arr) {
@@ -144,9 +147,6 @@ Page({
         selectAllStatus: false
       })
     }
-
-
-
   },
   onChange(e) {
     let arr = this.data.cart
@@ -244,12 +244,10 @@ Page({
         url: url,
         method: 'get',
         success: res => {
-          console.log(res)
           if (res.data.code == 200) {
             that.setData({
               cart: res.data.data
             })
-            console.log(res.data.data)
             this.totalPrice()
             this.checkxuan()
           } else {
@@ -294,46 +292,31 @@ Page({
         },
       })
     }
-  
- 
-    
-    console.log(app.globalData.isLogin)
-    console.log("--------------------------------------------")
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log(this.data.cart)
-    console.log(this.data.arr)
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-console.log('4154')
   }
 })

@@ -43,12 +43,16 @@
     </view>
   </view>
   <!-- f4 商品导航 -->
+    
   <view class="f4_nav bg-f5">
     <view>
       <van-grid column-num="5" border="{{ false }}">
         <van-grid-item  use-slot wx:for="{{ classInfo }}" wx:key="index" data-click="{{item.nav}}" bind:click="myClickTiao">
-          <image style="width: 85%; height: 100rpx;" src="{{item.url}}" />
+          <!-- <!-- <image style="width: 85%; height: 100rpx;" src="{{item.url}}" /> -->
+          <iconfont name="{{item.icon}}"></iconfont>
           <text class="font-25">{{item.name}}</text>
+        
+          <!-- <van-grid-item icon="{{item.icon}}" text="{{item.name}}" dot /> -->
         </van-grid-item>
       </van-grid>
     </view>
@@ -56,7 +60,6 @@
   <!-- f5 广告栏 -->
   <view class="column">
     <view>
-
             <view>
         <image src="https://bk.bklei.com/shop/home/home2.png"></image>
       </view>

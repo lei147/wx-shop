@@ -75,7 +75,7 @@
             <van-grid-item 
             icon="https://bk.bklei.com/shop/icon/yve.png"
             link-type="navigateTo"
-    url="/pages/dashboard/index" 
+    url="/pages/walletin/walletin" 
             dot="{{true}}" 
             text="余额记录" />
             <van-grid-item 

@@ -104,7 +104,6 @@ Page({
               } else {
                 console.log('没有数据')
               }
-              console.log(that.data.arrOrder)
             }
           })
         },

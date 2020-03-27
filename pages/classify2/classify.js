@@ -9,6 +9,11 @@ Page({
     active: 0,
     
   },
+  onChange(event) {
+    this.setData({
+      active: event.detail.name
+    })
+  },
   productInfo: function(id) {
     let that = this
     let url = app.globalData.URL + '/product/query/product?id=' + id
@@ -60,7 +65,6 @@ Page({
             tenList: res.data.data
           })
         }
-        console.log(res)
       }
     })
   },

@@ -54,7 +54,6 @@ Page({
             good_select: 1
           },
           success: res => {
-            console.log(res)
             wx.showToast({
               title: '添加购物车成功',
               icon: 'success',
@@ -78,8 +77,6 @@ Page({
     let num = this.data.value
     let isShow = this.data.isShow;
     if (isShow) {
-      console.log(app.globalData.isLogin)
-      console.log(true)
       if (app.globalData.isLogin === false) {
         wx.showToast({
           title: '你还未登录，请在个人中心登录',
@@ -147,7 +144,6 @@ Page({
           lunbo: res.data[1],
           comment: res.data[2].data
         })
-        console.log(res.data)
       }
 
     })

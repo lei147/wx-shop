@@ -6,6 +6,9 @@ App({
   onToken:function(){
     
   },
+  onLoad:function(){
+    
+  },
   globalData: {
     URL:'https://blog.cross.echosite.cn',
     isLogin:false,

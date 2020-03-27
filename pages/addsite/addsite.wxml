@@ -21,7 +21,6 @@
         </view>
       </view>
       <van-field value="{{ site }}" clearable label="详细地址" data-index="3" bind:change="onChange" />
-
     </van-cell-group>
   </view>
   <!-- 保存按钮 -->
@@ -29,6 +28,5 @@
     <view class="pd-20" style="text-align:center">
       <van-button round size="large" type="danger" bind:click="onClick">保存地址</van-button>
     </view>
-
   </view>
 </view>

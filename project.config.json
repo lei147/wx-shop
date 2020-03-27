@@ -171,6 +171,13 @@
 					"id": -1,
 					"name": "签到",
 					"pathName": "pages/signin/signin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "余额记录",
+					"pathName": "pages/walletin/walletin",
 					"scene": null
 				}
 			]

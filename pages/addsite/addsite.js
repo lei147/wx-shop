@@ -127,7 +127,6 @@ Page({
    
   },
   bindRegionChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
@@ -146,7 +145,6 @@ Page({
         url:url,
         method:'get',
         success:res=>{
-          console.log(res)
           let s = res.data.data[0].user_site
           let arr=s.split(',')
           that.setData({

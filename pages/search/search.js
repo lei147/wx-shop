@@ -44,7 +44,6 @@ Page({
               goodArr:res.data.data,
               isgood: true
             })
-            console.log(res.data.data)
           }else{
             that.setData({
               goodArr:[],
@@ -59,7 +58,6 @@ Page({
   getRecord(value){
     let that=this
     let arr=this.data.record
-    console.log(arr)
     if(arr==""){
       arr.push(value)
       that.setData({
@@ -92,7 +90,6 @@ Page({
     wx.removeStorage({
       key: 'record',
       success(res) {
-        console.log(res)
       }
     })
     this.setData({
