@@ -13,12 +13,12 @@
         <view wx:if="{{!oneList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-        <view wx:else  class="pd-20 {{active==0? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==0? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{oneList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -43,7 +43,7 @@
           <view wx:for="{{twoList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -68,7 +68,7 @@
           <view wx:for="{{threeList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+               <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -93,7 +93,7 @@
           <view wx:for="{{fourList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -113,12 +113,12 @@
         <view wx:if="{{!fiveList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==4? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==4? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{fiveList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+               <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -138,12 +138,12 @@
         <view wx:if="{{!sixList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==5? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==5? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{sixList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -163,12 +163,12 @@
         <view wx:if="{{!sevenList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==6? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==6? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{sevenList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -188,12 +188,12 @@
         <view wx:if="{{!eightList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==7? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==7? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{eightList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+               <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -213,12 +213,12 @@
         <view wx:if="{{!nineList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==8? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==8? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{nineList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+               <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">
@@ -238,12 +238,12 @@
         <view wx:if="{{!tenList}}" class="text-center" style="margin:50rpx 0">
           <text>暂无商品</text>
         </view>
-               <view wx:else class="pd-20 {{active==9? '':'dnone'}}">
+        <view wx:else class="pd-20 {{active==9? '':'dnone'}}">
           <!-- 单个商品样式  遍历 -->
           <view wx:for="{{tenList}}" wx:key="index" style=" box-sizing: border-box ;padding:20rpx; width:50%;float:left">
             <navigator url="/pages/detail/detail?id={{item.good_id}}">
               <view>
-                <image style="width:100%; height:315rpx" src="{{item.good_cover}}"></image>
+                <van-image width="100%" height="315rpx" lazy-load src="{{item.good_cover}}" />
               </view>
               <view class="font-35 pd-lr-20">
                 <view style="height:100rpx">

@@ -43,7 +43,7 @@ Page({
           })
         } else if (id == 5) {
           that.setData({
-            five: res.data.data
+            fiveList: res.data.data
           })
         } else if (id == 6) {
           that.setData({
