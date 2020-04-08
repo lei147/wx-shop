@@ -68,7 +68,7 @@
 
 <img src="https://bk.bklei.com/projectBanner/1%20(2).jpg" alt="img" width="50%" />
 
-<img src="https://bk.bklei.com/projectBanner/1%20(20).jpg" alt="img" width="50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(20).jpg" alt="img" width="50%" style="box-shadow: 5px 5px 5px #EEEEEE;" />
 
 
 
