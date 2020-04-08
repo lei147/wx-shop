@@ -6,6 +6,39 @@
         <view class="text-center pd-20">
           <text>暂无相关优惠券</text>
         </view>
+        <!-- 优惠券 -->
+        <view>
+          <view style="box-shadow:2rpx 2rpx 30rpx #666">
+            <view class="row pd-20" style="background-color:#ECF9FF">
+              <view class="row">
+                <view style="width:200rpx" class="text-center">
+                  <view style="color:#EB4F52">￥
+                    <text class="font-50" style="font-weight:blod">5</text> </view>
+                  <view class="colorhui">满29元可用</view>
+                </view>
+                <view class="pd-lr-20">
+                  <view class="pd-b-10" style="font-size:40rpx">果蔬优惠券</view>
+                  <view class="font-25">
+                    <view>限2019-04-10当天使用</view>
+                    <view style="white-space: nowrap">限收获手机号为18819504384</view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view>
+                  <van-button round custom-style="width:120rpx;font-size:20rpx" color="#EB4F52">去使用</van-button>
+                </view>
+              </view>
+            </view>
+            <view class="pd-20" style="background-color:#FCFCFC;">
+              <view class="pd-20">
+                限品类：水果、蔬菜
+              </view>
+
+            </view>
+          </view>
+
+        </view>
       </view>
     </van-tab>
     <van-tab title="已使用">
@@ -23,8 +56,8 @@
       </view>
     </van-tab>
   </van-tabs>
-  <view class=" fixed-b w-100 " >
-    <navigator url="/pages/getticket/getticket" >
+  <view class=" fixed-b w-100 " style="background-color:#0DAFFA;color:#EFF3F5">
+    <navigator url="/pages/getticket/getticket">
       <view class="text-center pd-20 box-s">
         <text>去领券</text>
       </view>
