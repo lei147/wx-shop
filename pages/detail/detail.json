@@ -1,4 +1,5 @@
 {
+    "navigationBarTitleText": "商品详情",
   "usingComponents": {
     "van-icon": "/@vant/weapp/icon/index",
     "van-goods-action": "/@vant/weapp/goods-action/index",

@@ -1,4 +1,5 @@
 {
+    "navigationBarTitleText": "商品分类",
   "usingComponents": {
     "van-search": "/@vant/weapp/search/index",
     "van-tab": "/@vant/weapp/tab/index",
