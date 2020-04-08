@@ -14,65 +14,65 @@
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(6).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(6).jpg" alt="img" width="50%" />
 
 
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(9).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(9).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(17).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(17).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(5).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(5).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(19).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(19).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(10).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(10).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(3).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(3).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(16).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(16).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(15).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(15).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(7).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(7).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(11).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(11).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(8).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(8).jpg" alt="img" width="50%" />
 
-<img src="https://bk.bklei.com/projectBanner/1%20(13).jpg" alt="img" style="width:50%" />
-
-
-
-<img src="https://bk.bklei.com/projectBanner/1%20(2).jpg" alt="img" style="width:50%" />
-
-<img src="https://bk.bklei.com/projectBanner/1%20(20).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(13).jpg" alt="img" width="50%" />
 
 
 
-<img src="https://bk.bklei.com/projectBanner/1%20(21).jpg" alt="img" style="width:50%" />
+<img src="https://bk.bklei.com/projectBanner/1%20(2).jpg" alt="img" width="50%" />
+
+<img src="https://bk.bklei.com/projectBanner/1%20(20).jpg" alt="img" width="50%" />
+
+
+
+<img src="https://bk.bklei.com/projectBanner/1%20(21).jpg" alt="img" width="50%" />
 
 
 
