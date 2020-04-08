@@ -1,6 +1,8 @@
 {
+      "navigationBarTitleText": "我的优惠券",
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+      "van-button": "@vant/weapp/button/index"
   }
 }
